@@ -1,0 +1,68 @@
+--EXTRUCTURAS DE BLOQUE
+DECLARE
+    VAR
+BEGIN   --OBLIGATORIO
+
+EXCEPTION
+
+END;   --OBLIGATORIO
+
+
+---PARA MOSTRAR POR PANTALLA AL DEPURAR
+SET SERVERROUTPUT ON
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('Hola, mundo');  ---PARA MOSTRAR POR PANTALLA
+END;
+
+
+--FUNCIONES
+FUNCTION name (VAR1 datatype, VAR2 datatype)
+RETURN datatype
+IS
+
+BEGIN
+   --CODIGO
+   RETURN value
+[EXCEPTION]
+
+END;
+
+
+
+--PROCEDIMIENTOS
+PROCEDURE name (VAR1 datatype, VAR2 datatype)
+IS
+
+BEGIN
+   --CODIGO
+   RETURN value
+[EXCEPTION]
+
+END;
+
+
+
+--RECORD
+TYPE nombre_tipo
+Is RECORD ([nombre_campo, tipo_capo, [not null], :=valor][,...]
+
+nombre_variable nombre_tipo  ----ej: cuenta int
+
+
+--en un bloque puede haber un commit o varios
+
+
+
+
+--TRIGGER
+	--BEFORE
+	--AFTER
+	--INSTEAD OF
+
+CREATE OR REPLACE TRIGGER INS_EMPLE
+		BEFORE INSERT, UPDATE, SELECT, DELETE ON EMPLE
+	BEGIN
+		IF(TO_CHAR(SYSDATE, 'HH24') NOT IN ('15', '16') THEN
+			codigo..
+		END IF;
+	END;
